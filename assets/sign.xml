@@ -25,4 +25,19 @@
         <name>Đây là biển báo 103c</name>
         <image>sign_103c</image>
     </sign>
+    <sign>
+        <id>00_131</id>    
+        <name>Đây là biển báo 131</name>
+        <image>sign_131</image>
+    </sign>
+    <sign>
+        <id>00_123a</id>    
+        <name>Đây là biển báo 123a</name>
+        <image>sign_123a</image>
+    </sign>
+    <sign>
+        <id>00_123b</id>    
+        <name>Đây là biển báo 123b</name>
+        <image>sign_123b</image>
+    </sign>
 </data>

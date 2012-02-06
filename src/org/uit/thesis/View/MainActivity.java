@@ -263,6 +263,7 @@ public class MainActivity extends Activity {
 		Bitmap blob=Bitmap.createScaledBitmap(temp, 30, 30,true);
 		cout++;
 		savePic(blob, "blob");
+		//savePic(blob, cout+"");
 		
 		//read again from sd card
 		BitmapFactory.Options options = new BitmapFactory.Options();

@@ -79,16 +79,19 @@ containing a value of this type.
         public static final int sign_103a=0x7f020014;
         public static final int sign_103b=0x7f020015;
         public static final int sign_103c=0x7f020016;
-        public static final int test01=0x7f020017;
-        public static final int test02=0x7f020018;
-        public static final int test03=0x7f020019;
-        public static final int test04=0x7f02001a;
-        public static final int test05=0x7f02001b;
-        public static final int test06=0x7f02001c;
-        public static final int testsign=0x7f02001d;
-        public static final int unknow=0x7f02001e;
-        public static final int zoomin=0x7f02001f;
-        public static final int zoomout=0x7f020020;
+        public static final int sign_123a=0x7f020017;
+        public static final int sign_123b=0x7f020018;
+        public static final int sign_131=0x7f020019;
+        public static final int test01=0x7f02001a;
+        public static final int test02=0x7f02001b;
+        public static final int test03=0x7f02001c;
+        public static final int test04=0x7f02001d;
+        public static final int test05=0x7f02001e;
+        public static final int test06=0x7f02001f;
+        public static final int testsign=0x7f020020;
+        public static final int unknow=0x7f020021;
+        public static final int zoomin=0x7f020022;
+        public static final int zoomout=0x7f020023;
     }
     public static final class id {
         public static final int arrow_down=0x7f060010;

@@ -16,6 +16,7 @@ import org.opencv.imgproc.Imgproc;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.util.Log;
 
 
 public class DetectObjectLayer {
@@ -130,9 +131,15 @@ public class DetectObjectLayer {
 	}
 	
 	public void detectRedCircleSign(){
-		List<Mat> contours=getContoursRedMask();
-		if(contours.size()>0)
-			FindCircle(contours, 0);
+		for(int i=30;i<=145;i=i+10){
+			List<Mat> contours=getContoursRedMask(i);
+			if(contours.size()>0)
+				FindCircle(contours, 0);
+			if(signList.size()>0){
+				Log.i("DetectObjectLayer_detectRedCircleSign", "Saturation value "+i);
+				return;
+			}
+		}
 	}
 	
 	public void detectBlueCircleSign(){
@@ -142,7 +149,7 @@ public class DetectObjectLayer {
 	}
 	
 	public void detectRedTriangleSign(){
-		List<Mat> contours=getContoursRedMask();
+		List<Mat> contours=getContoursRedMask(60);
 		if(contours.size()>0)
 			FindTriangle(contours, 0);
 	}
@@ -194,7 +201,7 @@ public class DetectObjectLayer {
 		return contours;
 	}
 	
-	public List<Mat> getContoursRedMask(){
+	public List<Mat> getContoursRedMask(int i){
 		//Init temp variable
 		List<Mat> contours=new ArrayList<Mat>();
 		Mat mRGBA=new Mat();
@@ -204,7 +211,7 @@ public class DetectObjectLayer {
 		
 		//Get data from Bitmap
 		mRGBA=Utils.bitmapToMat(image);
-		Imgproc.GaussianBlur(mRGBA,mRGBA,new Size(5, 5),1.5,1.5);
+		Imgproc.GaussianBlur(mRGBA,mRGBA,new Size(5, 5),3.5,3.5);
 	    Imgproc.cvtColor(mRGBA,mRGB,Imgproc.COLOR_RGBA2RGB);
 	    Imgproc.cvtColor(mRGB,mTemp,Imgproc.COLOR_RGB2HSV);
 	    Core.split(mTemp,lHSV);
@@ -219,7 +226,7 @@ public class DetectObjectLayer {
 	    
 	    //Filter S channel
 	    mTemp=new Mat();
-	    Imgproc.threshold(lHSV.get(1), mTemp, 10, 255, Imgproc.THRESH_BINARY);
+	    Imgproc.threshold(lHSV.get(1), mTemp, i, 255, Imgproc.THRESH_BINARY);
 	    lHSV.set(1, mTemp);
 	    Core.bitwise_and(lHSV.get(0), lHSV.get(1), mTemp);
 	    
@@ -231,8 +238,8 @@ public class DetectObjectLayer {
 //	    Core.bitwise_and(lHSV.get(0), lHSV.get(2), mTemp);
 	    
 	    //Use Canny
-	    Imgproc.dilate(mTemp, mTemp, new Mat(), new Point(-1, -1), 1);
-	    Imgproc.erode(mTemp, mTemp, new Mat(), new Point(-1, -1), 1);
+	    Imgproc.dilate(mTemp, mTemp, new Mat(), new Point(-1, -1), 3);
+	    Imgproc.erode(mTemp, mTemp, new Mat(), new Point(-1, -1), 3);
 	    Imgproc.Canny(mTemp, mTemp, 100, 50);
 	    
 	    //Find contour
