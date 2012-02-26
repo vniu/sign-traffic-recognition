@@ -2,17 +2,17 @@
 <data>
     <sign>
         <id>00_101</id>    
-        <name>Đây là biển báo 101</name>
+        <name>Đường cấm - Restricted roads</name>
         <image>sign_101</image>
     </sign> 
     <sign>
         <id>00_102</id>    
-        <name>Đây là biển báo 102</name>
+        <name>Cấm đi ngược chiều - One-way roads</name>
         <image>sign_102</image>
     </sign> 
     <sign>
         <id>00_103a</id>    
-        <name>Đây là biển báo 103a</name>
+        <name>Cấm ô tô - Restraining car</name>
         <image>sign_103a</image>
     </sign>
     <sign>
@@ -27,17 +27,17 @@
     </sign>
     <sign>
         <id>00_131</id>    
-        <name>Đây là biển báo 131</name>
+        <name>Cấm đỗ xe - Prohibit parking</name>
         <image>sign_131</image>
     </sign>
     <sign>
         <id>00_123a</id>    
-        <name>Đây là biển báo 123a</name>
+        <name>Cấm rẽ trái - Forbidden to turn left</name>
         <image>sign_123a</image>
     </sign>
     <sign>
         <id>00_123b</id>    
-        <name>Đây là biển báo 123b</name>
+        <name>Cấm rẻ phải - Forbidden to turn right</name>
         <image>sign_123b</image>
     </sign>
 </data>
